@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-contact',
   template: `
     <p>
-      contact works!
+    Contact works
     </p>
   `,
   styles: []
@@ -14,6 +14,7 @@ export class ContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
