@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject, BehaviorSubject, ReplaySubject } from 'rxjs';
-import {ajax} from 'rxjs/ajax';
+import { Subject, BehaviorSubject} from 'rxjs';
+import { SafeSubscriber } from 'rxjs/internal/Subscriber';
 
 @Component({
   selector: 'app-rxjs',
@@ -11,44 +11,24 @@ export class RxjsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  
-    // Observables are unicast 
-    const observable = new Observable(obj => obj.next(Math.random()));
-
-    // subscriber 1
-    observable.subscribe(d => console.log(d));
-
-    // subscriber 2
-  
-    observable.subscribe(d => console.log(d));
 
     // Subject 
-     const subject2 = new Subject();
+     const subject = new Subject();
 
-     //subscriber 1
+     subject.subscribe( d => console.log(`Subject Subscriber1 : ${d}`));
 
-     subject2.subscribe( d => console.log(d));
+     subject.next(2020);
 
-     //subscriber 2
-     subject2.subscribe( d => console.log(d));
-
-     subject2.next(Math.random());
+     subject.subscribe( d => console.log(`Subject Subscriber2 : ${d}`)); // returned nothing
 
 
-    const subject3 = new Subject();
-    const data = ajax('https://jsonplaceholder.typicode.com/users');
+   // Behavior Subject
+     const bSubject = new BehaviorSubject<number>(12);
+     bSubject.subscribe(d => console.log(`BehaviorSubject Subscriber1:  ${d}`));
 
-    subject3.subscribe(d => console.log(d));
-    subject3.subscribe(d => console.log(d));
+    bSubject.next(200);
 
-    const result = data.subscribe(subject3);
-    
-  
-
-    
-
-  
-
+    bSubject.subscribe(d => console.log(`BehaviorSubject Subscriber2:  ${d}`));
 
 
   
