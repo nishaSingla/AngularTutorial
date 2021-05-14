@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import {NotificationService} from './notification.service';
+import { NotificationBoardComponent } from './notification-board/notification-board.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,13 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     AboutComponent,
     ContactComponent,
     RxjsComponent,
+    NotificationBoardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
