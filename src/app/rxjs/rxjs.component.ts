@@ -33,15 +33,22 @@ export class RxjsComponent implements OnInit {
     
 
     //ReplaySubject
-     const replaySubject = new ReplaySubject(2);
-    const d =  replaySubject.subscribe(d => console.log(`Subsriber 1: ${d}`));
-     replaySubject.next(2001);
-     replaySubject.next(2002);
-// d.unsubscribe();
-     replaySubject.next(2003);
-     replaySubject.next(2004);
-     replaySubject.subscribe(d => console.log(`Subsriber 2: ${d}`));
-     replaySubject.next(2005);
+
+    const $message = new ReplaySubject(2);
+    $message.next('Hello..');
+    $message.next('How are you ?');
+    $message.next('From where are you ?');
+    $message.next('Stay at home...');
+
+    $message.subscribe(msg => console.log(`User1: ${msg}`));
+
+    $message.next('Get Vaccinated....');
+    $message.next('Keep Learning');
+
+    $message.subscribe(msg => console.log(`User2: ${msg}`));
+
+
+
     
 
 
