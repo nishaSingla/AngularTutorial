@@ -1,0 +1,13 @@
+<div>
+  <h3 class="text-center text-success">ViewChild/ViewChildren</h3>
+
+  <p #highlight>This is an important message</p>
+  <strong #highlight>This is an another message</strong>
+
+  <h3>Counter {{ child?.counter}}</h3>
+  <div>
+  <button (click)="inc()">Increment</button>
+  <button (click)="dec()">Decrement</button>
+</div>
+  <app-counter #childView></app-counter>
+</div>

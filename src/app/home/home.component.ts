@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <p>
       home works!
+      <app-life-cycle></app-life-cycle>
     </p>
   `,
   styles: []
