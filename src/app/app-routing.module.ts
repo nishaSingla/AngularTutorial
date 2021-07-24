@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { UsersComponent } from './users/users.component';
 import { ViewchildComponent } from './viewchild/viewchild.component'
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'rxjs', component: RxjsComponent },
   { path: 'view', component: ViewchildComponent },
-  {path: 'product', loadChildren:'./product-dashboard/product-dashboard.module#ProductDashboardModule'}
+  {path: 'product', loadChildren:'./product-dashboard/product-dashboard.module#ProductDashboardModule'},
+  { path: 'users', component: UsersComponent },
 ];
 
 @NgModule({

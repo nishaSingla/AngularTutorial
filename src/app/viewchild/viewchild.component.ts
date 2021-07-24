@@ -10,7 +10,7 @@ export class ViewchildComponent implements OnInit, AfterViewInit {
   // @ViewChild("highlight")marker:ElementRef;
   @ViewChildren("highlight")marker:QueryList<any>;
 
-  @ViewChild('childView')child:CounterComponent;
+  @ViewChild('childView', {read: true, static: true})child:CounterComponent;
 
   constructor() { 
 

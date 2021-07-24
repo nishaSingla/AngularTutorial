@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-about',
   template: `
   <div>
-   <h1>About Works</h1>
+  <h2>About</h2>
    </div>
   `,
   styles: []

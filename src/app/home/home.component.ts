@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   template: `
-    <p>
-      home works!
-      <app-life-cycle></app-life-cycle>
-    </p>
+    <div>
+      <app-life-cycle-child-component>
+       <p>This is child component 1</p>
+      </app-life-cycle-child-component>
+    </div>
   `,
   styles: []
 })

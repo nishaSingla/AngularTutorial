@@ -1,51 +1,29 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscriber, Subscription} from 'rxjs';
-import {filter} from 'rxjs/operators';
-
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-product-dashboard',
   templateUrl: './product-dashboard.component.html',
   styleUrls: ['./product-dashboard.component.css']
 })
-export class ProductDashboardComponent implements OnInit, OnDestroy {
+export class ProductDashboardComponent implements OnInit {
 
-  private mySubscription:Subscription;
+  public salesProducts = [
+   { id: 1, name: 'Acs', price: '100'},
+   { id: 2, name: 'Phones', price: '2000'},
+   { id: 3, name: 'Fashion', price: '5000'},
+   { id: 4, name: 'Electronics', price: '3000'},
+  ];
+
+  public topProducts = [
+    { id: 1, name: 'Phone', price: '2000'},
+    { id: 2, name: 'Laptop', price: '6000'},
+    { id: 3, name: 'Decor', price: '12000'},
+    { id: 4, name: 'Electronics', price: '33000'},
+   ];
   constructor() {
    }
 
  ngOnInit(){
-    // promise 
-     const promise = new Promise(resolve => {
-      //  console.log('Promise call.....');
-       setTimeout(()=>{
-           resolve('Promise working');
-           resolve('Promise working1');
-           resolve('Promise working2');
-           resolve('Promise working3');
-       }, 1000)
-     })
-
-    //  promise.then(result => console.log(result));
-
-    // observable
-
-    const observable = new Observable(sub => {
-      console.log('Observable call ....');
-      let counter = 0;
-        setInterval(() => {
-          counter = counter +1;
-          sub.next(counter);
-            
-        }, 1000);
-    });
-    // observable.pipe(
-    //   filter(d => d === 'Observable working1'),
-    // )
-    this.mySubscription = observable.subscribe(result => console.log('Subscriber count ' + result));
- }
-
- ngOnDestroy(){
-    this.mySubscription.unsubscribe();
+   
  }
 
 }

@@ -10,10 +10,11 @@ import { ContactComponent } from './contact/contact.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import {NotificationService} from './notification.service';
 import { NotificationBoardComponent } from './notification-board/notification-board.component';
-import { LifeCycleComponent } from './home/LifeCycleHooks';
 import { ChildComponent } from './home/child.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
 import { CounterComponent } from './viewchild/counter/counter.component';
+import { UsersComponent } from './users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,16 +24,17 @@ import { CounterComponent } from './viewchild/counter/counter.component';
     ContactComponent,
     RxjsComponent,
     NotificationBoardComponent,
-    LifeCycleComponent,
     ChildComponent,
     ViewchildComponent,
     CounterComponent,
+    UsersComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent]
