@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'rxjs', component: RxjsComponent },
   { path: 'view', component: ViewchildComponent },
-  {path: 'product', loadChildren:'./product-dashboard/product-dashboard.module#ProductDashboardModule'},
+  {path: 'product', loadChildren:() => import('./product-dashboard/product-dashboard.module').then(m => m.ProductDashboardModule)},
   { path: 'users', component: UsersComponent },
 ];
 
