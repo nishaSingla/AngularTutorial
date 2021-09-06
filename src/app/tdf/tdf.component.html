@@ -1,0 +1,78 @@
+
+<div class="px-5">
+    <form class="col-md-6" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+     
+      <div class="form-group mt-3">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" class="form-control" ngModel [(ngModel)]="user.firstname">
+      </div>
+     
+      <div class="form-group mt-3">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" class="form-control" ngModel [(ngModel)]="user.lastname">
+      </div>
+     
+      <div class="form-group mt-3">
+        <label for="email">Email </label>
+        <input type="text" id="email" name="email" class="form-control" ngModel>
+      </div>
+     
+      <div class="form-group mt-3">
+        <label for="gender">Gender  </label>
+        <br />
+        <input type="radio" value="male" id="gender" name="gender" ngModel> Male
+        <input type="radio" value="female" id="gender" name="gender" ngModel> Female
+      </div>
+     
+      <div class="form-group mt-3">
+      <label for="country">Country </label>
+      <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example" 
+      name="country" id="country" ngModel>
+        <option *ngFor="let country of countryList" [value]="country">{{country}}</option>
+      </select>
+      </div>
+
+      <label>Address:</label>
+      <div class="px-5" ngModelGroup="address">
+     <div class="form-group">
+       <label for="city">City</label>
+       <input type="text" name="city" class="form-control" ngModel [(ngModel)]="user.address.city"/>
+
+     </div>
+
+     <div class="form-group">
+      <label for="city">Street</label>
+      <input type="text" name="street" class="form-control" ngModel />
+
+    </div>
+
+    <div class="form-group">
+      <label for="city">PinCode</label>
+      <input type="text" name="code" class="form-control" ngModel />
+
+    </div>
+    </div>
+
+      <div class="form-group mt-3">
+
+        <input class="form-check-input" type="checkbox" value="" name="terms" id="terms" checked ngModel>
+        <label class="form-check-label px-2" for="terms">
+        All information provided by me is correct.
+        </label>
+      </div>
+     
+        <button type="submit" class="btn btn-primary mx-4">Submit</button>
+        
+        <button type="button" class="btn btn-success" (click)="resetForm(userForm)">Reset</button>
+        </form>
+
+        <hr />
+        <p> {{ userForm.value | json }}</p>
+        <p> Valid : {{ userForm.valid}}</p>
+        <p> touched : {{ userForm.touched}}</p>
+        <p> submitted : {{ userForm.submitted}}</p>
+    </div>
+
+
+    ix-ct-vue-aug2021
+    

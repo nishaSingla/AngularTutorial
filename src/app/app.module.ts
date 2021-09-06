@@ -16,6 +16,7 @@ import { CounterComponent } from './viewchild/counter/counter.component';
 import { UsersComponent } from './users/users.component';
 import { HeadersInterceptor } from './headers.interceptor';
 import { LoggingInterceptor } from './logging.interceptor';
+import { TdfComponent } from './tdf/tdf.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoggingInterceptor } from './logging.interceptor';
     ViewchildComponent,
     CounterComponent,
     UsersComponent,
+    TdfComponent,
   
   ],
   imports: [
