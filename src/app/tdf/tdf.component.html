@@ -14,7 +14,9 @@
      
       <div class="form-group mt-3">
         <label for="email">Email </label>
-        <input type="text" id="email" name="email" class="form-control" ngModel>
+        <input type="text" id="email" name="email" class="form-control" 
+        ngModel #email required>
+        <span>{{ email.className }}</span>
       </div>
      
       <div class="form-group mt-3">
@@ -73,6 +75,4 @@
         <p> submitted : {{ userForm.submitted}}</p>
     </div>
 
-
-    ix-ct-vue-aug2021
     
